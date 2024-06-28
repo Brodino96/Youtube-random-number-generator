@@ -10,7 +10,7 @@ def parseDuration(duration):
     return int(isodate.parse_duration(duration).total_seconds())
 
 def main():
-    input("Premi [INVIO] per ricevere il tuo numero casuale...")
+    input("Press [ENTER] to receive your random number...")
     os.system("cls")
 
     searchUrl = f"https://www.googleapis.com/youtube/v3/search?key={API_KEY}&order=date&part=id&type=video&maxResults=1"
@@ -26,9 +26,9 @@ def main():
 
             print(parseDuration(duration))
         else:
-            print("Non è stato possibile ottenere i dettagli del video.")
+            print("Details of the video could not be obtained")
     else:
-        print("Non è stato possibile trovare video recenti.")
+        print("No recent videos could be found")
 
     main()
 
