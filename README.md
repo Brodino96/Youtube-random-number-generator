@@ -1,2 +1,5 @@
 # youtube-random-number-generator
-It's a random number generator, but it's dumb
+
+### It's possibly the dumbest way to make a random number generator
+
+To make it work create a file named "api.py" and insert: `API_KEY = "your_api_key"`
