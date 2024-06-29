@@ -1,10 +1,12 @@
-import api # Create a file named `api.py` and put `API_KEY = "your_api_key"` inside of it
-import requests
-import isodate
-import os
+import requests # Without this I can't make calls to the api
+import isodate # Needed to easily transform lenght to seconds
+import os # I just want to clear the console
+from dotenv import load_dotenv
+
+load_dotenv()
 
 os.system("cls")
-API_KEY = api.API_KEY
+API_KEY = os.getenv("API_KEY")
 
 def parseDuration(duration):
     return int(isodate.parse_duration(duration).total_seconds())
