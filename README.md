@@ -11,4 +11,4 @@ The only options you can have are: [short], [medium] and [long]
 
 # How to contribute?
 
-Tell me what to add and i Will
+Tell me what to add and I will
