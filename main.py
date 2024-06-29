@@ -12,10 +12,18 @@ def parseDuration(duration):
     return int(isodate.parse_duration(duration).total_seconds())
 
 def main():
-    input("Press [ENTER] to receive your random number...")
+    print("Type ['short'] or ['medium'] or ['long'] to recive a random number...   ")
+    msg = input("")
+    msg = msg.lower()
+
+    if msg != "short" and msg != "medium" and msg != "long":
+        os.system("cls")
+        print("Lenght not supported, please select a supported one")
+        return main()
+    
     os.system("cls")
 
-    searchUrl = f"https://www.googleapis.com/youtube/v3/search?key={API_KEY}&order=date&part=id&type=video&maxResults=1"
+    searchUrl = f"https://www.googleapis.com/youtube/v3/search?key={API_KEY}&order=date&part=id&type=video&maxResults=1&videoDuration={msg}"
     response = requests.get(searchUrl).json()
 
     if response.get("items"):
